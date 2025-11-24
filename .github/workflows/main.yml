@@ -20,8 +20,8 @@ jobs:
       export-secrets-to-outputs: true
       export-secrets-to-environment: true
       static-secrets: |
-      - name: "/homework3-jenkins-static-secret"
-        output-name: "my_first_secret"
+        - name: "/homework3-jenkins-static-secret"
+          output-name: "my_first_secret"
       # api-url: "https://csm.thalescryptolabs.com/akeyless-api/v2/"
       api-url: "https://api.akeyless.io"
    
@@ -29,7 +29,7 @@ jobs:
       env:
         SECRET: ${{ env.my_first_secret }}
       run: |
-     # Use the secret securely within this step
+      # Use the secret securely within this step
         echo "Doing something with $SECRET"
    
     - name: Use Akeyless secret (step output)
