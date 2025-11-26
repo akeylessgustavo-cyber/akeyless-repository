@@ -22,12 +22,12 @@ jobs:
       static-secrets: |
         - name: "/homework3-jenkins-static-secret"
           output-name: "my_first_secret"
-      # api-url: "https://csm.thalescryptolabs.com/akeyless-api/v2/"
-      api-url: "https://api.akeyless.io"
+        # api-url: "https://csm.thalescryptolabs.com/akeyless-api/v2/"
+          api-url: "https://api.akeyless.io"
    
         - name: Use Akeyless secret (environment variable)
-          env:
-            SECRET: ${{ env.my_first_secret }}
+        env:
+          SECRET: ${{ env.my_first_secret }}
           run: |
           # Use the secret securely within this step
             echo "Doing something with $SECRET"
@@ -35,5 +35,5 @@ jobs:
         - name: Use Akeyless secret (step output)
           run: |
         # Use the secret securely within this step
-            echo "Doing something with ${{ steps.fetch-secrets.outputs.my_first_secret }}"
+          echo "Doing something with ${{ steps.fetch-secrets.outputs.my_first_secret }}"
 
