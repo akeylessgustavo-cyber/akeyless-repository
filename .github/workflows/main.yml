@@ -27,12 +27,11 @@ jobs:
    
       - name: Use Akeyless secret (environment variable)
         env:
-        SECRET: ${{ env.my_first_secret }}
-          run: |
-            echo "Doing something with $SECRET"
+          SECRET: ${{ env.my_first_secret }}
+        run: |
+          echo "Doing something with $SECRET"
    
       - name: Use Akeyless secret (step output)
         run: |
-        # Use the secret securely within this step
           echo "Doing something with ${{ steps.fetch-secrets.outputs.my_first_secret }}"
 
